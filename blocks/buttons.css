@@ -1,0 +1,11 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+button {
+  width: 12vw;
+  height: 3vw;
+  font-family: "Courier New", Courier, monospace;
+}

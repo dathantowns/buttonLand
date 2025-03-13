@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A LAND OF BUTTONS" />
+    <meta name="keywords" content="HTML, CSS, javaScript" />
+    <meta name="author" content="Dathan Towns" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap"
+      rel="stylesheet"
+    />
+    <title>BUTTONLAND</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__title">WELCOME TO BUTTONLAND</h1>
+      </header>
+      <main class="content">
+        <ul class="buttons">
+          <button class="buttons__color-btn" type="button">COLORIZE</button>
+          <button class="buttons__name-btn" type="button">RENAME</button>
+          <button class="buttons__flip-btn" type="button">FLIP</button>
+          <button class="buttons__hide-btn" type="button">HIDE</button>
+          <button class="buttons__reset-btn" type="submit">RESET</button>
+        </ul>
+      </main>
+      <footer class="footer"></footer>
+      <div class="modal-container">
+        <div class="modal" id="color-modal">
+          <form class="modal__form">
+            <fieldset class="modal__fieldset">
+              <label for="color" class="modal__label">COLOR?</label>
+              <input
+                type="text"
+                class="modal__input"
+                id="color"
+                placeholder="Type the new color"
+              />
+            </fieldset>
+            <button type="submit" class="modal__submit-btn">
+              CHANGE COLOR
+            </button>
+          </form>
+        </div>
+        <div class="modal" id="rename-modal">
+          <form class="modal__form">
+            <fieldset class="modal__fieldset">
+              <label for="rename" class="modal__label">NEW NAME?</label>
+              <input
+                type="text"
+                class="modal__input"
+                id="rename"
+                placeholder="Type the new name"
+              />
+            </fieldset>
+            <button type="submit" class="modal__submit-btn">RENAME</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/index.js" defer></script>
+  </body>
+</html>

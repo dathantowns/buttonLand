@@ -1,0 +1,13 @@
+.page {
+  background-color: #fcf5e5;
+  min-height: 100vh;
+  font-family: "Bagel", Helvetica, sans-serif;
+}
+
+.page_flip {
+  transform: rotate(180deg);
+}
+
+.hide {
+  visibility: hidden;
+}

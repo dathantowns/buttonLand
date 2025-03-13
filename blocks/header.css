@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  border: solid 2px black;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__title {
+  color: rgb(64, 117, 253);
+  text-decoration: underline;
+  font-size: 5vw;
+}

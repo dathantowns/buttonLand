@@ -1,0 +1,40 @@
+.modal-container {
+  display: flex;
+}
+
+.modal {
+  width: 20vw;
+  visibility: hidden;
+  margin: 100px auto 0;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__form {
+  width: min-content;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.modal__fieldset {
+  width: 20vw;
+  padding: 0;
+  border: none;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.modal__input {
+  width: calc(20vw - 16px);
+  height: 5vh;
+  padding-left: 10px;
+  font-size: 30px;
+  margin-top: 10px;
+}
