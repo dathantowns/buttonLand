@@ -8,4 +8,11 @@ button {
   width: 12vw;
   height: 3vw;
   font-family: "Courier New", Courier, monospace;
+  border-radius: 8px;
+  border: none;
+  background: radial-gradient(rgb(255, 255, 255), rgb(64, 117, 253));
+}
+
+button:hover {
+  background: radial-gradient(rgb(255, 255, 255), rgb(5, 75, 251));
 }

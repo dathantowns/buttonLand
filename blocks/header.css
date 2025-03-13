@@ -1,6 +1,7 @@
 .header {
   display: flex;
-  border: solid 2px black;
+  border: dotted 2px black;
+  border-radius: 10px;
   height: 20vh;
   justify-content: center;
   align-items: center;
