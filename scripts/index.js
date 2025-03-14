@@ -1,21 +1,51 @@
-const colorButton = document.querySelector(".buttons__color-btn");
 const page = document.querySelector(".page");
-const colorFormElement = page.querySelector("#color-modal");
-const colorSubmitButton = page.querySelector(".modal__submit-btn");
-const colorInput = page.querySelector("#color");
 
-const renameButton = page.querySelector(".buttons__name-btn");
-const renameFormElement = page.querySelector("#rename-modal");
-const headerTitleElement = page.querySelector(".header__title");
-const nameInput = page.querySelector("#rename");
+// GALLERY
+const gallery = page.querySelector(".gallery");
+const buttonlandButton = gallery.querySelector("#buttonland-btn");
 
-const flipButton = page.querySelector(".buttons__flip-btn");
+function handleOpenApp(app) {
+  app.classList.add("app_open");
+  gallery.classList.remove("gallery_open");
+}
 
-const hideButton = page.querySelector(".buttons__hide-btn");
+function handleCloseApp(app) {
+  app.classList.remove("app_open");
+  gallery.classList.add("gallery_open");
+}
 
-const resetButton = page.querySelector(".buttons__reset-btn");
+buttonlandButton.addEventListener("click", () => {
+  handleOpenApp(buttonlandApp);
+});
 
-const buttonsToHide = [colorButton, renameButton, flipButton, resetButton];
+// BUTTONLAND APP
+const buttonlandApp = page.querySelector(".buttonland");
+const colorFormElement = buttonlandApp.querySelector("#color-modal");
+const colorSubmitButton = buttonlandApp.querySelector(".modal__submit-btn");
+const colorInput = buttonlandApp.querySelector("#color");
+const renameFormElement = buttonlandApp.querySelector("#rename-modal");
+const headerTitleElement = buttonlandApp.querySelector(".header__title");
+const nameInput = buttonlandApp.querySelector("#rename");
+
+const renameButton = buttonlandApp.querySelector("#rename-btn");
+
+const colorButton = buttonlandApp.querySelector("#color-btn");
+
+const flipButton = buttonlandApp.querySelector("#flip-btn");
+
+const hideButton = buttonlandApp.querySelector("#hide-btn");
+
+const resetButton = buttonlandApp.querySelector("#reset-btn");
+
+const closeButton = buttonlandApp.querySelector("#close-btn");
+
+const buttonsToHide = [
+  colorButton,
+  renameButton,
+  flipButton,
+  resetButton,
+  closeButton,
+];
 
 const modals = [colorFormElement, renameFormElement];
 
@@ -39,7 +69,7 @@ function handleCloseModal(modal) {
 }
 
 function handleSubmitColor(evt) {
-  page.setAttribute("style", `background-color: ${colorInput.value}`);
+  buttonlandApp.setAttribute("style", `background-color: ${colorInput.value}`);
   handleCloseModal(colorFormElement);
   evt.preventDefault();
 }
@@ -65,8 +95,8 @@ function handleHideButtons() {
 
 function handleReset() {
   headerTitleElement.textContent = "WELCOME TO BUTTONLAND";
-  page.classList.remove("page_flip");
-  page.setAttribute("style", `background-color: ${"default"}`);
+  buttonlandApp.classList.remove("buttonland_flip");
+  buttonlandApp.setAttribute("style", `background-color: ${"default"}`);
   modals.forEach((modal) => {
     modal.classList.remove("modal_opened");
   });
@@ -85,9 +115,14 @@ renameButton.addEventListener("click", () => {
 renameFormElement.addEventListener("submit", handleSubmitName);
 
 flipButton.addEventListener("click", () => {
-  page.classList.toggle("page_flip");
+  buttonlandApp.classList.toggle("buttonland_flip");
 });
 
 hideButton.addEventListener("click", handleHideButtons);
 
 resetButton.addEventListener("click", handleReset);
+
+closeButton.addEventListener("click", () => {
+  handleCloseApp(buttonlandApp);
+  handleReset();
+});

@@ -1,0 +1,38 @@
+.gallery {
+  width: 90%;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Chicle", sans-serif;
+  font-style: normal;
+}
+
+.gallery_open {
+  visibility: visible;
+}
+
+.gallery__header {
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  font-size: 5vw;
+}
+
+.gallery__content {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  grid-template-rows: repeat(4, min-content);
+  gap: 6vh;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.gallery__button {
+  width: 200px;
+  height: 200px;
+  background-image: url(../images/BUTTONLAND-icon.avif);
+  background-size: cover;
+}

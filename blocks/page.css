@@ -2,6 +2,8 @@
   background-color: #fcf5e5;
   min-height: 100vh;
   font-family: "Bagel", Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 .page_flip {

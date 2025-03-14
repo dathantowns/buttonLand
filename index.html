@@ -14,54 +14,87 @@
       href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chicle&display=swap"
+      rel="stylesheet"
+    />
     <title>BUTTONLAND</title>
   </head>
   <body>
     <div class="page">
-      <header class="header">
-        <h1 class="header__title">WELCOME TO BUTTONLAND</h1>
-      </header>
-      <main class="content">
-        <ul class="buttons">
-          <button class="buttons__color-btn" type="button">COLORIZE</button>
-          <button class="buttons__name-btn" type="button">RENAME</button>
-          <button class="buttons__flip-btn" type="button">FLIP</button>
-          <button class="buttons__hide-btn" type="button">HIDE</button>
-          <button class="buttons__reset-btn" type="submit">RESET</button>
-        </ul>
-      </main>
-      <footer class="footer"></footer>
-      <div class="modal-container">
-        <div class="modal" id="color-modal">
-          <form class="modal__form">
-            <fieldset class="modal__fieldset">
-              <label for="color" class="modal__label">COLOR?</label>
-              <input
-                type="text"
-                class="modal__input"
-                id="color"
-                placeholder="Type the new color"
-              />
-            </fieldset>
-            <button type="submit" class="modal__submit-btn">
-              CHANGE COLOR
+      <div class="app buttonland" id="buttonland">
+        <header class="header">
+          <h1 class="header__title">WELCOME TO BUTTONLAND</h1>
+        </header>
+        <main class="content">
+          <ul class="buttons">
+            <button class="buttons__button" type="button" id="color-btn">
+              COLORIZE
             </button>
-          </form>
+            <button class="buttons__button" type="button" id="rename-btn">
+              RENAME
+            </button>
+            <button class="buttons__button" type="button" id="flip-btn">
+              FLIP
+            </button>
+            <button class="buttons__button" type="button" id="hide-btn">
+              HIDE
+            </button>
+            <button class="buttons__button" type="button" id="reset-btn">
+              RESET
+            </button>
+            <button class="buttons__button" type="button" id="close-btn">
+              CLOSE
+            </button>
+          </ul>
+        </main>
+        <footer class="footer"></footer>
+        <div class="modal-container">
+          <div class="modal" id="color-modal">
+            <form class="modal__form">
+              <fieldset class="modal__fieldset">
+                <label for="color" class="modal__label">COLOR?</label>
+                <input
+                  type="text"
+                  class="modal__input"
+                  id="color"
+                  placeholder="Type the new color"
+                />
+              </fieldset>
+              <button type="submit" class="modal__submit-btn">
+                CHANGE COLOR
+              </button>
+            </form>
+          </div>
+          <div class="modal" id="rename-modal">
+            <form class="modal__form">
+              <fieldset class="modal__fieldset">
+                <label for="rename" class="modal__label">NEW NAME?</label>
+                <input
+                  type="text"
+                  class="modal__input"
+                  id="rename"
+                  placeholder="Type the new name"
+                />
+              </fieldset>
+              <button type="submit" class="modal__submit-btn">RENAME</button>
+            </form>
+          </div>
         </div>
-        <div class="modal" id="rename-modal">
-          <form class="modal__form">
-            <fieldset class="modal__fieldset">
-              <label for="rename" class="modal__label">NEW NAME?</label>
-              <input
-                type="text"
-                class="modal__input"
-                id="rename"
-                placeholder="Type the new name"
-              />
-            </fieldset>
-            <button type="submit" class="modal__submit-btn">RENAME</button>
-          </form>
-        </div>
+      </div>
+      <div class="gallery gallery_open">
+        <header class="gallery__header">
+          <h1 class="gallery__title">**GALLERY**</h1>
+        </header>
+        <main class="gallery__content">
+          <label for="buttonland-btn" class="gallery__label"
+            ><button class="gallery__button" id="buttonland-btn"></button
+            >BUTTONLAND</label
+          >
+        </main>
+        <footer class="gallery__footer"></footer>
       </div>
     </div>
     <script src="./scripts/index.js" defer></script>

@@ -1,0 +1,8 @@
+.buttonland {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonland_flip {
+  transform: rotate(180deg);
+}

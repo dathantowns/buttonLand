@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-button {
+.buttons__button {
   width: 12vw;
   height: 3vw;
   font-family: "Courier New", Courier, monospace;
@@ -13,6 +13,14 @@ button {
   background: radial-gradient(rgb(255, 255, 255), rgb(64, 117, 253));
 }
 
-button:hover {
+.buttons__button:hover {
   background: radial-gradient(rgb(255, 255, 255), rgb(5, 75, 251));
+}
+
+#close-btn {
+  background: radial-gradient(rgb(255, 255, 255), rgb(251, 5, 5));
+}
+
+#close-btn:hover {
+  background: radial-gradient(rgb(255, 255, 255), rgb(213, 1, 1));
 }
