@@ -21,7 +21,6 @@
   width: 20vw;
   padding: 0;
   border: none;
-  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -39,6 +38,7 @@
   margin-top: 10px;
   border: none;
   outline-color: green;
+  margin-bottom: 10px;
 }
 
 .modal__input_type_error {
@@ -54,4 +54,8 @@
 
 .modal__input-error_active {
   visibility: visible;
+}
+
+.modal__submit-btn {
+  width: calc(20vw - 12px);
 }

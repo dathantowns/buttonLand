@@ -128,27 +128,52 @@ function checkInputValidity(formElement, formInput) {
   }
 }
 
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
+}
+
+function toggleButtonState(inputList, buttonElement) {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.disabled = true;
+  } else {
+    buttonElement.disabled = false;
+  }
+}
+
 function setEventListeners(formElement) {
   const inputList = Array.from(formElement.querySelectorAll(".modal__input"));
+  const buttonElement = formElement.querySelector(".modal__submit-btn");
+  toggleButtonState(inputList, buttonElement);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
       checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
     });
   });
 }
 
 function enableValidation() {
   const formList = Array.from(document.forms);
+
   formList.forEach((formElement) => {
+    formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+    });
     setEventListeners(formElement);
+    // const fieldsetList = Array.from(
+    //   formElement.querySelectorAll(".modal__fieldset")
+    // );
+    // fieldsetList.forEach((fieldset) => {
+    //   setEventListeners(fieldset);
   });
+  // });
 }
 
 colorButton.addEventListener("click", () => {
   handleOpenModal(colorFormElement);
 });
-
-setEventListeners(colorFormElement);
 
 colorFormElement.addEventListener("submit", handleSubmitColor);
 
