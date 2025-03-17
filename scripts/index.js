@@ -144,7 +144,7 @@ function toggleButtonState(inputList, buttonElement) {
 
 function setEventListeners(formElement) {
   const inputList = Array.from(formElement.querySelectorAll(".modal__input"));
-  const buttonElement = formElement.querySelector(".modal__submit-btn");
+  const buttonElement = form.querySelector(".modal__submit-btn");
   toggleButtonState(inputList, buttonElement);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
@@ -161,14 +161,13 @@ function enableValidation() {
     formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-    setEventListeners(formElement);
-    // const fieldsetList = Array.from(
-    //   formElement.querySelectorAll(".modal__fieldset")
-    // );
-    // fieldsetList.forEach((fieldset) => {
-    //   setEventListeners(fieldset);
+    const fieldsetList = Array.from(
+      formElement.querySelectorAll(".modal__fieldset")
+    );
+    fieldsetList.forEach((fieldset) => {
+      setEventListeners(fieldset);
+    });
   });
-  // });
 }
 
 colorButton.addEventListener("click", () => {
