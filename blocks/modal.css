@@ -37,4 +37,21 @@
   padding-left: 10px;
   font-size: 30px;
   margin-top: 10px;
+  border: none;
+  outline-color: green;
+}
+
+.modal__input_type_error {
+  outline-color: red;
+}
+
+.modal__input-error {
+  color: red;
+  font-size: small;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.modal__input-error_active {
+  visibility: visible;
 }

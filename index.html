@@ -53,15 +53,18 @@
         <footer class="footer"></footer>
         <div class="modal-container">
           <div class="modal" id="color-modal">
-            <form class="modal__form">
+            <form class="modal__form" novalidate>
               <fieldset class="modal__fieldset">
-                <label for="color" class="modal__label">COLOR?</label>
-                <input
-                  type="text"
-                  class="modal__input"
-                  id="color"
-                  placeholder="Type the new color"
-                />
+                <label for="color" class="modal__label"
+                  >COLOR?
+                  <input
+                    type="text"
+                    class="modal__input"
+                    id="color"
+                    placeholder="Type the new color"
+                  />
+                  <span class="modal__input-error" id="color-error"></span>
+                </label>
               </fieldset>
               <button type="submit" class="modal__submit-btn">
                 CHANGE COLOR
@@ -69,15 +72,18 @@
             </form>
           </div>
           <div class="modal" id="rename-modal">
-            <form class="modal__form">
+            <form class="modal__form" novalidate>
               <fieldset class="modal__fieldset">
-                <label for="rename" class="modal__label">NEW NAME?</label>
-                <input
-                  type="text"
-                  class="modal__input"
-                  id="rename"
-                  placeholder="Type the new name"
-                />
+                <label for="rename" class="modal__label"
+                  >NEW NAME?
+                  <input
+                    type="text"
+                    class="modal__input"
+                    id="rename"
+                    placeholder="Type the new name"
+                  />
+                  <span class="modal__input-error" id="rename-error"></span>
+                </label>
               </fieldset>
               <button type="submit" class="modal__submit-btn">RENAME</button>
             </form>

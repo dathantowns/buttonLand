@@ -50,9 +50,9 @@ const buttonsToHide = [
 const modals = [colorFormElement, renameFormElement];
 
 function handleOpenModal(modal) {
-  modals.forEach((modal) => {
-    if (modal.classList[1] === "modal_opened") {
-      modal.classList.remove("modal_opened");
+  modals.forEach((formElement) => {
+    if (formElement.classList[1] === "modal_opened") {
+      handleCloseModal(formElement);
     }
   });
   modal.classList.add("modal_opened");
@@ -66,6 +66,10 @@ function handleOpenModal(modal) {
 
 function handleCloseModal(modal) {
   modal.classList.remove("modal_opened");
+  const inputList = modal.querySelectorAll(".modal__input");
+  inputList.forEach((formInput) => {
+    hideInputError(modal, formInput);
+  });
 }
 
 function handleSubmitColor(evt) {
@@ -102,9 +106,49 @@ function handleReset() {
   });
 }
 
+function hideInputError(formElement, formInput) {
+  const errorElement = formElement.querySelector(`#${formInput.id}-error`);
+  formInput.classList.remove("modal__input_type_error");
+  errorElement.classList.remove("modal__input-error_active");
+  errorElement.textContent = "";
+}
+
+function showInputError(formElement, formInput, errorMessage) {
+  const errorElement = formElement.querySelector(`#${formInput.id}-error`);
+  formInput.classList.add("modal__input_type_error");
+  errorElement.textContent = errorMessage;
+  errorElement.classList.add("modal__input-error_active");
+}
+
+function checkInputValidity(formElement, formInput) {
+  if (!formInput.validity.valid) {
+    showInputError(formElement, formInput, formInput.validationMessage);
+  } else {
+    hideInputError(formElement, formInput);
+  }
+}
+
+function setEventListeners(formElement) {
+  const inputList = Array.from(formElement.querySelectorAll(".modal__input"));
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(formElement, inputElement);
+    });
+  });
+}
+
+function enableValidation() {
+  const formList = Array.from(document.forms);
+  formList.forEach((formElement) => {
+    setEventListeners(formElement);
+  });
+}
+
 colorButton.addEventListener("click", () => {
   handleOpenModal(colorFormElement);
 });
+
+setEventListeners(colorFormElement);
 
 colorFormElement.addEventListener("submit", handleSubmitColor);
 
@@ -126,3 +170,5 @@ closeButton.addEventListener("click", () => {
   handleCloseApp(buttonlandApp);
   handleReset();
 });
+
+enableValidation();
